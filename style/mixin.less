@@ -1,0 +1,619 @@
+//svg-first font face to avoid rough edge font rendering in chrome
+.customfont(@name,@file) {
+	@font-face {
+		font-family: @name;
+		src: url("@{file}.eot");
+		src: url("@{file}.eot?#iefix") format("embedded-opentype"),
+			url("@{file}.svg") format("svg"),
+			url("@{file}.woff") format("woff"),
+			url("@{file}.ttf") format("truetype");
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
+// to crop like button so we could hide the fb comment box
+.cropLike(@width:62px, @height:20px) {
+	display: inline-block;
+	font-size: 0;
+	width: @width;
+	height: @height;
+	position: relative;
+	iframe {
+		position: absolute;
+		clip: rect(0, @width, @height, 0);
+	}
+}
+
+//added opacity support for IE9-
+.opacityForAll(@val) {
+	@ie: @val*100;
+	opacity: @val;
+	.lt-ie9 & {
+		filter: ~"alpha(opacity:@{ie})";
+	}
+}
+.authDialog () {
+	/* Facebook style dialog */
+	.dialog-fb {
+		background: #fff;
+		border: none;
+		padding: 20px 20px 0;
+		.box-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+		.ui-dialog-titlebar {
+			background: none;
+			border: none;
+			color: #000;
+			font-size: 14px;
+			padding: 0;
+			.ui-dialog-titlebar-close {
+				display: none;
+			}
+		}
+		.ui-dialog-content {
+			border: none;
+			color: #000;
+			padding: 10px 0 20px;
+		}
+		.ui-dialog-buttonpane {
+			background: #f2f2f2;
+			border-top: 1px solid #ccc;
+			margin: 0 -20px;
+			padding: 10px 15px;
+			button {
+				background: #627ab6;
+				.background-image(linear-gradient(top, #627ab6 0, #5e74ad 100%));
+				border: 1px solid #1a3668;
+				color: #fff;
+				font-size: 13px;
+				font-weight: bold;
+				padding: 4px 8px;
+				margin-left: 8px;
+				.box-shadow(0 1px 0 rgba(255, 255, 255, 0.3) inset);
+				span {
+					padding: 0;
+				}
+				&:active {
+					background: #4F6AA3;
+					.box-shadow(0 2px 3px rgba(0, 0, 0, 0.2) inset);
+				}
+			}
+			.cancel {
+				background: #f4f4f4;
+				.background-image(linear-gradient(top, #f4f4f4 0, #e1e1e1 100%));
+				border-color: #999;
+				color: #000;
+				margin-left: 10px;
+				&:active {
+					background: #eee;
+				}
+			}
+		}
+		.ui-corner-all, &.ui-corner-all {
+			.border-radius(0);
+		}
+	}
+	.dialog-fb, .dialog-fb .ui-dialog-buttonpane button {
+		font: 14px "lucida grande",tahoma,verdana,arial,sans-serif;
+		margin: 0;
+	}
+}
+.krdsCreditsDialog () {
+	/* KRDS credit dialog */
+	.dialog-krds {
+		padding: 0 20px 0 0;
+		background: none;
+		border: none;
+		.ui-dialog-content {
+			background: url(../img/dialog/img_gamectrl.png) no-repeat left top #173058;
+			border-bottom: 5px solid #224375;
+			overflow: hidden;
+			padding: 0 0 35px 0;
+			p {
+				color: white;
+				font-family: "arial",tahoma,verdana,arial,sans-serif;
+				font-size: 20px;
+				line-height: 36px;
+				margin: 35px 0 15px;
+				text-align: center;
+				text-transform: uppercase;
+			}
+			a {
+				background: url("../img/dialog/logo_krds.png") no-repeat;
+				display: block;
+				height: 61px;
+				margin: auto;
+				outline: 0;
+				text-indent: -9999em;
+				width: 220px;
+			}
+		}
+		.ui-dialog-titlebar {
+			border: 0;
+			font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+			color: white;
+			font-size: 14px;
+			font-weight: bold;
+			padding: 5px;
+			&.ui-widget-header {
+				z-index: 100;
+				border: none;
+				background: none;
+			}
+			.ui-dialog-titlebar-close {
+				width: 36px;
+				height: 36px;
+				right: -15px;
+				top: 48%;
+				border: none;
+				background: url(../img/dialog/credits_btn_close.png) no-repeat;
+				padding: 0;
+				margin: 0;
+				&:hover, &.ui-state-focus {
+					background-position: left bottom;
+					border: none;
+				}
+				span {
+					display: none;
+				}
+			}
+		}
+		.ui-corner-all, &.ui-corner-all {
+			.border-radius(0);
+		}
+	}
+}
+
+.inviteDialog () {
+	/* Invite Friends dialog */
+	.dialogInvite {
+		background: none;
+		border: none;
+		padding: 0;
+		font-family: arial, helvetica, sans-serif;
+		.border-radius(3px);
+		.ui-dialog-titlebar {
+			background: #3b5997;
+			border: none;
+			font: bold 14px "lucida grande", tahoma, arial, helvetica, sans-serif;
+			color: #fff;
+			padding: 0.4em 1em 1em;
+		}
+		.ui-button.ui-dialog-titlebar-close {
+			background: none;
+			border: 0;
+			margin-top: -12px;
+			padding: 0;
+			.ui-icon-closethick {
+				background: url("../img/dialog/icon_close.png") no-repeat;
+				width: 15px;
+				height: 15px;
+				padding: 0;
+				cursor: pointer;
+			}
+			&.ui-state-hover {
+				background: none;
+				border: none;
+				.ui-icon-closethick {
+					background-position: left -15px;
+				}
+			}
+			.ui-button-text {
+				border: 0;
+				padding: 0;
+			}
+		}
+		.ui-dialog-content {
+			background-color: #f2f2f2;
+			border: none;
+			margin-top: -5px;
+			padding: 20px 0;
+		}
+		h6 {
+			background: url("../img/dialog/icon_friends.png") no-repeat;
+			color: #959595;
+			font-size: 16px;
+			font-weight: normal;
+			line-height: 30px;
+			text-shadow: 1px 1px 0 #fff;
+			float: left;
+			margin: 0;
+			padding: 0 20px 5px 40px;
+		}
+		.scroll-pane {
+			height: 345px;
+			overflow: auto;
+		}
+		.ui-dialog-buttonpane {
+			margin: 0;
+		}
+		.inviteSearch {
+			display: inline-block;
+			width: 94%;
+			padding: 0 3%;
+			margin-bottom: 15px;
+			p {
+				margin: 0;
+			}
+			input[type=text] {
+				background: #fff;
+				border: 1px solid #ddd;
+				font: 13px arial, helvetica, sans-serif;
+				padding: 6px 30px 6px 6px;
+				width: 40%;
+			}
+			.clear {
+				background: #eee;
+				font: 16px/20px arial, helvetica, sans-serif;
+				color: #aaa;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				position: relative;
+				left: -30px;
+				top: 0;
+				.border-radius(50%);
+				&:hover {
+					background: #aaa;
+					color: #fff;
+				}
+			}
+		}
+		.inviteError {
+			color: #888;
+			font-size: 12px;
+			text-align: center;
+			padding: 30px;
+			display: none;
+		}
+		.inviteList {
+			list-style: none;
+			margin: 0;
+			padding: 0 2%;
+			overflow: hidden;
+			.show {
+				display: block;
+			}	
+			.hide {
+				display: none;
+			}
+			.noInfo {
+				background: none;
+				border: 2px dashed;
+				cursor: default;
+				font-size: 17px;
+				height: auto;
+				left: 0;
+				margin: 0 auto;
+				padding: 10px 2%;
+				position: absolute;
+				right: 0;
+				text-align: center;
+				width: 87%;
+			}
+			li {
+				float: left;
+				width: 30.7%;
+				padding: 5px 1%;
+				margin: 2px 0.3%;
+				height: 55px;
+				cursor: pointer;
+				.border-radius(3px);
+				.user-select(none);
+				&:hover figure {
+					border-color: #3b5997;
+				}
+			}
+			figure {
+				background: #fff;
+				border: 1px solid #a4b1cc;
+				padding: 2px;
+				float: left;
+				span {
+					background-position: center center;
+					display: block;
+					width: 50px;
+					height: 50px;
+				}
+			}
+			p {
+				font-size: 11px;
+				font-weight: bold;
+				word-wrap: break-word;
+				height: 40px;
+				margin: 10px 10px 0 60px;
+				overflow: hidden;
+			}
+			.selected {
+				background: #dfdfdf url("../img/dialog/icon_check.png") 96% 88% no-repeat;
+				.animation(invitepop 0.15s ease-out);
+			}
+		}
+		.ui-button {
+			background: #5b74a8;
+			border-color: #29447E;
+			font: bold 12px "lucida grande", tahoma, arial, helvetica, sans-serif;
+			color: #fff;
+			.border-radius(0);
+			&:active {
+				background: #4f6aa3;
+				.box-shadow(0 1px 1px rgba(0, 0, 0, 0.2) inset);
+			}
+			&.cancel {
+				background: #f0f0f0;
+				border-color: #888;
+				color: #333;
+				.ui-button-text {
+					border-color: #fff;
+				}
+				&:active {
+					background: #ddd;
+				}
+			}
+		}
+		.ui-button-text {
+			border-top: 1px solid #8a9cc2;
+			padding: 0.25em 1.2em;
+		}
+	}
+	@-webkit-keyframes invitepop {
+		0 {
+			-webkit-transform: scale(1);
+		}
+		50% {
+			-webkit-transform: scale(1.15);
+		}
+		100% {
+			-webkit-transform: scale(1);
+		}
+	}
+	@-moz-keyframes invitepop {
+		0 {
+			-moz-transform: scale(1);
+		}
+		50% {
+			-moz-transform: scale(1.15);
+		}
+		100% {
+			-moz-transform: scale(1);
+		}
+	}
+	@keyframes invitepop {
+		0 {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.15);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+}
+
+.albumDialog () {
+	/* Fb Album dialog */
+	.dialogAlbum {
+		background: none;
+		border: none;
+		padding: 0;
+		font-family: arial, helvetica, sans-serif;
+		.border-radius(3px);
+		.ui-dialog-titlebar {
+			background: #3b5997;
+			border: none;
+			font: bold 14px "lucida grande", tahoma, arial, helvetica, sans-serif;
+			color: #fff;
+			padding: 0.4em 1em 1em;
+		}
+		.ui-dialog-titlebar-close {
+			margin-top: -12px;
+			padding: 0;
+			&.ui-state-hover {
+				background: none;
+				border: none;
+				.ui-icon-closethick {
+					background-position: left -15px;
+				}
+			}
+		}
+		.ui-icon-closethick {
+			background: url("../img/dialog/icon_close.png") no-repeat;
+			width: 15px;
+			height: 15px;
+			padding: 0;
+			cursor: pointer;
+		}
+		.ui-dialog-content {
+			background-color: #f2f2f2;
+			border: none;
+			margin-top: -5px;
+			padding: 20px;
+		}
+		.albums, .items {
+			overflow: hidden;
+		}
+		.fallback {
+			color: #888;
+			clear: both;
+			font-size: 12px;
+			text-align: center;
+			padding: 30px;
+		}
+		h6 {
+			background: url("../img/dialog/icon_albums.png") no-repeat;
+			color: #959595;
+			font-size: 16px;
+			font-weight: normal;
+			line-height: 30px;
+			text-shadow: 1px 1px 0 #fff;
+			float: left;
+			margin: 0;
+			padding: 0 20px 5px 40px;
+		}
+		.items h6 {
+			background: url("../img/dialog/icon_photos.png") no-repeat;
+		}
+		ul {
+			position: relative;
+			margin: 0 -5px 10px;
+			overflow: hidden;
+			clear: both;
+			li {
+				background: #fff;
+				cursor: pointer;
+				float: left;
+				margin: 10px 16px 40px;
+				padding: 5px;
+				position: relative;
+				width: 100px;
+				&:before, &:after {
+					background: #fff;
+					border: 1px solid #a4b1cc;
+					content: "";
+					display: block;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					position: absolute;
+					top: 0;
+					.transition(all .2s ease);
+					.box-sizing(border-box);
+				}
+				&:before {
+					left: -5px;
+					top: -5px;
+				}
+				b {
+					background: #000;
+					border: 1px solid #708db2;
+					.border-radius(5px);
+					color: #fff;
+					display: none;
+					font-size: 12px;
+					font-weight: normal;
+					margin-top: 35px;
+					opacity: 0.8;
+					padding: 3px 10px;
+					text-align: center;
+					text-decoration: none;
+				}
+				&:hover {
+					b {
+						display: inline-block;
+					}
+					&:before, &:after {
+						border-color: #3b5997;
+					}
+				}
+				&.active {
+					&:before, &:after {
+						border-color: #3b5997;
+						border-width: 1px;
+					}
+				}
+			}
+			span, div {
+				background-repeat: no-repeat;
+				background-position: center center;
+				display: block;
+				height: 100px;
+				overflow: hidden;
+				position: relative;
+				text-align: center;
+				width: 100px;
+				z-index: 5;
+			}
+		}
+		.albums ul li.active {
+			&:before, &:hover:before {
+				top: -8px;
+				left: -8px;
+			}
+		}
+		strong {
+			display: block;
+			font-size: 11px;
+			text-align: center;
+			word-wrap: break-word;
+			width: 100px;
+			height: 29px;
+			padding-top: 10px;
+			overflow: hidden;
+			position: absolute;
+		}
+		ol {
+			margin: 3px 0 0;
+			overflow: hidden;
+			padding: 0;
+			li {
+				background: #ddd;
+				color: #fff;
+				font-size: 11px;
+				line-height: 22px;
+				text-align: center;
+				height: 22px;
+				width: 22px;
+				margin: 0 5px 5px;
+				float: left;
+				cursor: pointer;
+				.border-radius(50%);
+				&:hover, &.active {
+					background: #999;
+				}
+				&:hover {
+					&.prev, &.next {
+						background: #ddd;
+						&.enabled {
+							background: #999;
+						}
+					}
+				}
+				&:first-child, &:last-child {
+					font-size: 15px;
+					font-weight: bold;
+				}
+				&.prev, &.next {
+					cursor: default;
+					opacity: 0.5;
+					&.enabled {
+						cursor: pointer;
+						opacity: 1;
+					}
+				}
+
+			}
+		}
+		.loading {
+			background: url("../img/dialog/fb_loader.gif") no-repeat;
+			text-indent: -99em;
+			text-align: center;
+			width: 32px;
+			height: 32px;
+			margin: 10px auto;
+		}
+	}
+	.lt-ie8 .dialogAlbum {
+		ul {
+			margin: 0 -10px 10px -10px;
+			li {
+				padding: 5px;
+				border: 1px solid #3b5997;
+				&:hover {
+					border-color: #7b8aa9;
+				}
+				&.active {
+					border: 3px solid #3b5997;
+				}
+			}
+		}
+		.albums, .items {
+			width: 100%;
+		}
+		.loading {
+			width: 100px;
+		}
+	}
+}

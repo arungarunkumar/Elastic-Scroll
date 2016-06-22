@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Elastic scroll</title>
+<script src="js/jquery-1.3.1.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Quattrocento:700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Cantarell|Meera+Inimai|Quattrocento+Sans" rel="stylesheet" />
+<link rel="stylesheet" href="style/box.css" />
+<link rel="stylesheet" href="style/main.css" />
+<link rel="stylesheet" href="style/menu.css" />
+<script>
+	
+</script>
+
+</head>
+
+<body>
+	<nav class="boxActions">
+		<a href="#" id="previous_box" title="Previous box">
+			<img src="img/back-icon.svg" alt="back" />
+		</a>
+		<a href="#" id="box_home" title="Box home">
+			<img src="img/krdsbox.svg" alt="KRDS Box" />
+		</a>
+		<a href="#" id="github_repo" title="Github repo">
+			<img src="img/github.svg" alt="Github" />
+		</a>
+		
+	</nav>
+	<h1>Elastic scroll</h1>
+	<p>Box Starter</p>
+	<div class="menuWidget">
+		<header class="mobileMenu">
+			<a href="#" class="menu">
+				<i class="icon-profile_icon">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+						<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" stroke="none">
+						<path d="M2367 5106 c-51 -14 -108 -60 -134 -110 -8 -15 -28 -121 -44 -233 -19 -132 -37 -219 -49 -243 -38 -75 -100 -116 -310 -202 -289 -120 -320 -118 -502 17 -230 172 -253 185 -316 185 -86 -1 -124 -24 -259 -162 -130 -132 -153 -169 -153 -246 0 -63 15 -90 141 -257 140 -186 143 -192 144 -290 0 -78 -3 -86 -82 -275 -87 -209 -128 -272 -202 -310 -24 -12 -106 -28 -227 -45 -104 -14 -208 -33 -231 -41 -62 -23 -119 -91 -134 -162 -14 -67 -7 -344 9 -383 15 -37 69 -97 105 -115 16 -9 122 -29 234 -45 312 -45 319 -51 448 -364 83 -202 97 -263 76 -342 -7 -26 -56 -102 -132 -205 -130 -176 -148 -204 -160 -258 -16 -69 3 -101 139 -239 116 -117 132 -130 187 -147 33 -10 87 -18 121 -19 l60 0 150 112 c210 157 213 158 309 158 77 0 87 -3 275 -81 209 -87 271 -128 309 -203 12 -22 30 -115 49 -243 17 -114 38 -220 46 -236 25 -49 93 -100 148 -111 63 -14 293 -14 356 0 55 11 123 62 147 110 9 16 29 121 45 234 45 313 52 321 365 451 184 76 193 79 270 79 96 -1 98 -1 270 -131 194 -145 209 -154 274 -154 82 0 123 26 259 163 130 131 152 167 152 245 0 63 -15 90 -141 257 -130 172 -141 193 -147 276 -4 64 -2 73 67 243 94 233 106 258 147 300 59 60 94 72 319 105 174 26 215 35 246 56 92 61 113 131 107 355 -5 165 -15 197 -78 254 -47 43 -67 48 -299 81 -115 17 -199 34 -222 45 -74 39 -115 101 -203 310 -79 189 -81 197 -81 275 1 98 4 104 144 290 58 77 114 156 123 175 22 42 23 118 3 167 -20 48 -247 277 -300 303 -50 24 -134 26 -176 4 -17 -8 -102 -69 -190 -134 -172 -129 -207 -145 -299 -137 -85 7 -430 152 -493 207 -73 64 -84 94 -117 325 -16 113 -36 218 -44 233 -26 51 -89 99 -145 111 -70 15 -314 13 -374 -3z m328 -1921 c179 -37 350 -170 433 -335 127 -254 81 -541 -118 -740 -75 -75 -147 -120 -252 -158 -64 -23 -88 -26 -198 -26 -110 0 -134 3 -198 26 -107 38 -177 83 -258 164 -247 246 -244 645 5 895 156 155 370 219 586 174z"/>
+						</g>
+					</svg>
+				</i>
+			</a>
+			<h1>Elastic scroll</h1>
+			<div class="nav">
+				<ul>
+					<li>
+						<a href="index.html" id="smooth">
+							<span>
+								<small>
+									Smooth
+								</small>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a id="smoothFly" href="#">
+							<span>
+								<small>
+									Smooth Fly
+								</small>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="grow.html" id="grow">
+
+							<span>
+								<small>
+									Grow
+								</small>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="flag.html" id="flag">
+
+							<span>
+								<small>
+									Flag
+								</small>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="wave.html" id="wave">
+							<span>
+								<small>
+									Wave
+								</small>
+							</span>
+						</a>
+					</li>					
+				</ul>
+			</div>
+		</header>
+	</div>
+	<div class="wrap">
+		<ul class="smooth">
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img1.jpg');">
+						<!--<img src="img/img1.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic2.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteCount">
+								<i class="heart" id="likes"></i>
+								<span id="counter">25</span>
+							</div>
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic3.jpg');"></i>
+								18/06/2000
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img2.jpg');">
+						<!--<img src="img/img2.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								24/03/2014
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img3.jpg');">
+						<!--<img src="img/img3.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								12/12/2014
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img4.jpg');">
+						<!--<img src="img/img4.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								01/01/2016
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img5.jpg');">
+						<!--<img src="img/img5.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								14/08/2001
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img6.jpg');">
+						<!--<img src="img/img1.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic2.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteCount">
+								<i class="heart" id="likes"></i>
+								<span id="counter">25</span>
+							</div>
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic3.jpg');"></i>
+								14/12/2011
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img7.jpg');">
+						<!--<img src="img/img2.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								14/08/2012
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img8.jpg');">
+						<!--<img src="img/img3.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								28/03/2016
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img9.jpg');">
+						<!--<img src="img/img4.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								14/01/2016
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img10.jpg');">
+						<!--<img src="img/img5.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								14/02/2014
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img1.jpg');">
+						<!--<img src="img/img1.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic2.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteCount">
+								<i class="heart" id="likes"></i>
+								<span id="counter">25</span>
+							</div>
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic3.jpg');"></i>
+								18/08/2015
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img2.jpg');">
+						<!--<img src="img/img2.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								12/10/2012
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img3.jpg');">
+						<!--<img src="img/img3.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								14/02/2016
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img4.jpg');">
+						<!--<img src="img/img4.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								19/08/2014
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img5.jpg');">
+						<!--<img src="img/img5.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								30/05/2014
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img6.jpg');">
+						<!--<img src="img/img1.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic2.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteCount">
+								<i class="heart" id="likes"></i>
+								<span id="counter">25</span>
+							</div>
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic3.jpg');"></i>
+								23/08/2015
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img7.jpg');">
+						<!--<img src="img/img2.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								12/12/2012
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img8.jpg');">
+						<!--<img src="img/img3.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								07/07/2014
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img9.jpg');">
+						<!--<img src="img/img4.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								18/08/2008
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li class="inview">
+				<div class="contentWrap">
+					<figure class="thumnail" style="background-image: url('img/img10.jpg');">
+						<!--<img src="img/img5.jpg" alt="" />-->
+					</figure>
+					<article>
+						<h3><i style="background-image: url('img/profile-pic4.jpg');"></i>Loremipsum</h3>
+						<p>
+							Maecenas consectetur condi mentum enim. 
+						</p>
+						<div class="voteblock">
+							<div class="voteName">
+								<i style="background-image: url('img/profile-pic2.jpg');"></i>
+								12/12/2015
+							</div>
+							<div class="voteCount">
+								<i class="heart"></i>
+								65
+							</div>
+						</div>
+					</article>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script src="js/main.js"></script>
+	<script src="js/inview.js"></script>
+</body>
+</html>
