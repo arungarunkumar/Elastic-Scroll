@@ -266,15 +266,24 @@ h1 {
 /* Smooth styles */
 
 .smooth {
+	-webkit-perspective: 900px;
+	-moz-perspective: 900px;
+	-ms-perspective: 900px;
+	-o-perspective: 900px;
+	perspective: 900px;
+	.transform-style(preserve-3d);
+	.perspective-origin(50% 50%);
 	li {
-		.transition(all 600ms ease-in-out);
+		.transition(all 950ms cubic-bezier(.57,.59,.75,.74));
+		.transform(translateY(0) translateZ(0));
 		.transform-origin(100% 50%);
 		&.active {
 			margin: 0;
 		}
 		&.animateIt {
-			.transition(all 750ms ease-in-out);
-			margin: 0 0 22px;
+			.transition(all 950ms cubic-bezier(.57,.59,.75,.74));
+			.transform(translateY(12px) translateZ(-4px));
+			//margin: 18px 0 18px;
 		}
 	}
 }
@@ -325,7 +334,7 @@ h1 {
 
 .wave {
 	li {
-		.transition(all 400ms ease-in-out);
+		.transition(all 600ms ease);
 		.transform(translateX(-70%));
 		&.active {
 			.transform(translateX(0));

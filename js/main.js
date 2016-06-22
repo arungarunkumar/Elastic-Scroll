@@ -11,7 +11,7 @@ $(document).ready(function() {
 				}, (i+1) * 10);
 				setTimeout(function(){ 
 					t.removeClass('animateIt'); 
-				}, (i+1) * 110);
+				}, (i+1) * 180);
 			});
 		}
 	}
