@@ -8,10 +8,24 @@ $(document).ready(function() {
 				var t = $(this);
 				setTimeout(function(){ 
 					t.addClass('animateIt'); 
-				}, (i+1) * 10);
+				}, (i+1) * 0);
 				setTimeout(function(){ 
 					t.removeClass('animateIt'); 
-				}, (i+1) * 180);
+				}, (i+1) * 100);
+			});
+		}
+	}
+	function reverseaddClass_function() {
+		if ($('.wrap ul').hasClass("down") ) {
+			$('li.inview').removeClass("animateIt");
+			 $($('.wrap ul li.active').get().reverse()).each(function(i) {
+				var t = $(this);
+				setTimeout(function(){
+					t.addClass('reverseanimate');
+				}, (i+1) * 0);
+				setTimeout(function(){
+					t.removeClass('reverseanimate'); 
+				}, (i+1) * 125);
 			});
 		}
 	}
@@ -20,17 +34,60 @@ $(document).ready(function() {
 		$('li.inview').addClass("active");
 	}else {
 		$('li.inview').addClass("active2");
+		$('li.inview').removeClass("up");
 	}
+	
+	/*$('ul').waypoint(function(direction) {
+		console.log("Waypoint moved "+direction);
+		if(direction==='down'){
+			$("ul").addClass("down");
+		}
+		else if(direction==='up'){
+			$("ul").addClass("up");
+		}
+	});*/
+	$('ul li.inview').waypoint(function(direction) {
+		if (direction === 'down') {
+			//console.log("moved down");
+			$('ul').addClass("up");
+			$('ul').removeClass("down");
+		} else if (direction === 'up') {
+			//console.log("moved up");
+			$('ul').addClass("down");
+			reverseaddClass_function();
+			$('ul').removeClass("up");
+			
+			// To Detect whether user stop scrolling
+			(function( $ ) {
+				console.log("hai");
+				$(function() {
+					var $output = $( "ul" );
+					$( window ).scroll(function() {
+						console.log("scroll()");
+						clearTimeout( $.data( this, "scrollCheck" ) );
+						$('ul').addClass("stop");
+						$.data( this, "scrollCheck", setTimeout(function() {
+							$('ul').removeClass("stop");
+						}, 425) );
+					});
+				});
+			})( jQuery );
+		}
+
+	}, { offset: '100%' });
+	
 	$(function () {
 		$('li.inview').bind('inview', function (event, visible) {
+			
 			if (visible) {
-				console.log('visible');
 				$(this).addClass("active");
 				$(this).removeClass("active2");
 				addClass_function();
 			} else {
+				reverseaddClass_function();
 				$(this).addClass("active2");
 				$(this).removeClass("active");
+				$(this).removeClass("animateIt2");
 			}
 		});
 	});
@@ -83,10 +140,6 @@ $(document).ready(function() {
 			menuaddClass_function();
 		}
 	});
-	/*$('.mobileMenu .nav li a').bind('click', function() {
-		menuremoveClass_function();
-		//return false;
-	});*/
 	
 	$('#smooth').bind('click', function() {
 		menuremoveClass_function();
